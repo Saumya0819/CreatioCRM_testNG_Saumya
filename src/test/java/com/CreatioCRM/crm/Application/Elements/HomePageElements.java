@@ -1,10 +1,22 @@
 package com.CreatioCRM.crm.Application.Elements;
 
-public class HomePageElements {
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+import com.CreatioCRM.crm.Framework.Web.Commons.WebCommons;
 
+public class HomePageElements extends WebCommons {
+	
+	@FindBy(xpath="//span[text()='Application Hub']")
+	protected WebElement ApplicationHubHeader;
+	@FindBy(xpath="//span[text()='Users']")
+	protected WebElement UsersHeader;
+	@FindBy(xpath="//span[text()='New application']")
+	protected WebElement NewApplicationHeader;
+	// Creatio Logo xpath
+	
+	
+	
 	}
 
-}
+

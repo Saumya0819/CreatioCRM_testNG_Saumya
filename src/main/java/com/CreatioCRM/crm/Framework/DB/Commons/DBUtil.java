@@ -1,4 +1,4 @@
-package com.CreatioCRM.crm.Framework.Utilities;
+package com.CreatioCRM.crm.Framework.DB.Commons;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
