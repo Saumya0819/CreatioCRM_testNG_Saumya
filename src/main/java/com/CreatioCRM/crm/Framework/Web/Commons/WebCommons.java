@@ -21,6 +21,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.CreatioCRM.crm.Framework.Base.BasePage;
+import com.CreatioCRM.crm.Framework.Reports.Reports;
 import com.CreatioCRM.crm.Framework.Utilities.PropUtil;
 
 public class WebCommons {
@@ -115,11 +116,16 @@ public class WebCommons {
     		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
     		wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(loactor, 0));}
         
-//16. Common method to 
+//16. Common method to wait
 		public void waitForElementToBePresent(long seconds, By locator) {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
 			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-		}        
+		}   
+// method to wait using explicit wait - wait for element
+		public void waitForElement(WebElement element, int seconds) {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
+			wait.until(ExpectedConditions.visibilityOf(element));
+		}
 //17. Common method to wait for the alert to be present
 		public void waitForAlert(long seconds) {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
@@ -152,8 +158,32 @@ public class WebCommons {
 			String screenshotPath = System.getProperty("user.dir") + "\\Screenshots\\" + fileName + ".png";
 			File screenshotFile = element.getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(screenshotFile, new File(screenshotPath));
-			return screenshotPath;
+			return screenshotPath;			
 		}
+// get element text
+			public String getElementText(WebElement element) {
+				return element.getText();
+			}
+
+			// get element attribute value
+			public String getAttributeValue(WebElement element, String attribute) {
+				return element.getAttribute(attribute);
+			}
+
+			// get title of the window
+			public String getTitle() {
+				return driver.getTitle();
+			}
+
+			// check element is displayed
+			public boolean isElementDisplayed(WebElement element) {
+				return element.isDisplayed();
+			}
+
+			// check element is enabled
+			public boolean isElementEnabled(WebElement element) {
+				return element.isEnabled();
+			} 
 //21. Common method to switch to a frame by index
 		public void switchToFrame(int index) {
 			driver.switchTo().frame(index);
@@ -204,6 +234,31 @@ public class WebCommons {
         
 		public void refreshPage() {
 			driver.navigate().refresh();}   
+//32. Method to print the logs in the report
+		public void log(String status , String message) {
+			if(status.equalsIgnoreCase("pass")) {
+				Reports.logger.pass(message);
+			}else if(status.equalsIgnoreCase("fail")) {
+				Reports.logger.fail(message);
+			}else if(status.equalsIgnoreCase("warning")) {
+				Reports.logger.warning(message);
+			}else if(status.equalsIgnoreCase("info")) {
+				Reports.logger.info(message);
+			}
 		
-		
+}
+		// method to click on element
+		public void click(WebElement element) {
+			scrollToElement(element);
+			element.click();}
+			// method to click on hidden element
+			public void jsClick(WebElement element) {
+				scrollToElement(element);
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].click()", element);}
+			
+				
+
+
+
 }
