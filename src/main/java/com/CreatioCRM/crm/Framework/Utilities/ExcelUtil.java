@@ -13,81 +13,20 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelUtil {
 
-	public static List<Map<String, String>> readData(String fileName, String sheetName) {
-
-		List<Map<String, String>> data = new ArrayList<Map<String, String>>();
-
-		try {
-
-			// Read the Excel file using Java
-			FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\TestData\\" + fileName);
-
-			// Load the file into Excel related Class
-			XSSFWorkbook wb = new XSSFWorkbook(fis);
-
-			// Read the data from specific sheet
-			XSSFSheet sh = wb.getSheet(sheetName);
-
-			// Get the total rows & columns having data
-			int totalRows = sh.getPhysicalNumberOfRows();
-			int totalColumns = sh.getRow(0).getPhysicalNumberOfCells();
-
-			// Create Loops and load row wise data (column name=column value) into maps and
-			// then store them in List
-
-			// Loop to iterate over rows
-			for (int r = 1; r < totalRows; r++) {
-
-				Map<String, String> rowData = new HashMap<String, String>();
-
-				// Loop to iterate over columns
-				for (int c = 0; c < totalColumns; c++) {
-					String columnName = sh.getRow(0).getCell(c).getStringCellValue();
-					String columnValue = sh.getRow(r).getCell(c).getStringCellValue();
-					rowData.put(columnName, columnValue);
-				}
-
-				data.add(rowData);
-
-			}
-
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		return data;
-	}
-
-	public static String[][] readExcelData(String fileName, String sheetName) {
-
+	public static String[][] readData(String fileName, String sheetName) {
 		String[][] data = null;
 
 		try {
-
-			// Read the Excel file using Java
-			FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\TestData\\" + fileName);
-
-			// Load the file into Excel related Class
-			XSSFWorkbook wb = new XSSFWorkbook(fis);
-
-			// Read the data from specific sheet
-			XSSFSheet sh = wb.getSheet(sheetName);
-
-			// Get the total rows & columns having data
-			int totalRows = sh.getPhysicalNumberOfRows();
-			int totalColumns = sh.getRow(0).getPhysicalNumberOfCells();
+			FileInputStream file = new FileInputStream(System.getProperty("user.dir") + "\\TestData\\" + fileName); //read the file
+			XSSFWorkbook workbook = new XSSFWorkbook(file); //share the file with excel classes
+			XSSFSheet sheet = workbook.getSheet(sheetName); //get the sheet to read data
+			int totalRows = sheet.getPhysicalNumberOfRows(); //total number of rows having data
+			int totalColumns = sheet.getRow(0).getPhysicalNumberOfCells();//total number of columns having data in specific row
+			data = new String [totalRows-1][totalColumns];
 			
-			// Create a 2D array to store the data
-			data = new String[totalRows][totalColumns];
-			
-			// Loop to iterate over rows
-			for(int r=0; r<totalRows; r++) {
-				
-				// Loop to iterate over columns
-				for(int c=0; c<totalColumns; c++) {
-					data[r][c] = sh.getRow(r).getCell(c).getStringCellValue();
+			for(int r=1; r<totalRows ; r++) {
+				for(int c=0;c<totalColumns; c++) {
+					data[r-1][c] = sheet.getRow(r).getCell(c).getStringCellValue();
 				}
 			}
 
@@ -99,4 +38,34 @@ public class ExcelUtil {
 
 		return data;
 	}
+	
+	public static List<Map<String,String>> readExcelData (String fileName, String sheetName) {
+		List<Map<String,String>> data = new ArrayList<Map<String,String>>();
+		
+		try {
+			FileInputStream file = new FileInputStream(System.getProperty("user.dir") + "\\TestData\\" + fileName); //read the file
+			XSSFWorkbook workbook = new XSSFWorkbook(file); //share the file with excel classes
+			XSSFSheet sheet = workbook.getSheet(sheetName); //get the sheet to read data
+			int totalRows = sheet.getPhysicalNumberOfRows(); //total number of rows having data
+			int totalColumns = sheet.getRow(0).getPhysicalNumberOfCells();//total number of columns having data in specific row
+			
+			for(int r=1;r<totalRows ; r++) {				
+				HashMap<String,String> rowData = new HashMap<String,String>(); 				
+				for(int c=0; c<totalColumns;c++) {
+					String columnName = sheet.getRow(0).getCell(c).getStringCellValue();
+					String columnValue = sheet.getRow(r).getCell(c).getStringCellValue();
+					rowData.put(columnName, columnValue);
+				}
+				data.add(rowData);
+			}			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		
+		return data;		
+	}
+
 }

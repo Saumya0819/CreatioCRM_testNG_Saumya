@@ -13,7 +13,7 @@ public class HomePageElements extends WebCommons {
 	protected WebElement UsersHeader;
 	@FindBy(xpath="//span[text()='New application']")
 	protected WebElement NewApplicationHeader;
-	// Creatio Logo xpath
+	
 	
 	
 	

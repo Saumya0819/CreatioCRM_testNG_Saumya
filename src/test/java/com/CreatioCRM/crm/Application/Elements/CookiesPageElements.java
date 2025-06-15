@@ -22,9 +22,8 @@ public class CookiesPageElements extends WebCommons{
 	public WebElement denyBtn;
 	@FindBy(xpath="//span[@class='css-1gstez2']")
 	public WebElement Feedback;
-	
 	@FindBy(xpath="//div[@class='CybotCookiebotDialogBodyLevelButtonSliderWrapper CybotCookiebotDialogBodyLevelButtonSliderWrapperDisabled']")
-	public WebElement NecessaryCookiesbtn;
+	public WebElement necessaryCookiesbtn;
 	@FindBy(xpath="//input[@id='CybotCookiebotDialogBodyLevelButtonPreferences']")
 	public WebElement PreferencesCookiesbtn;
 	@FindBy(xpath="//input[@id='CybotCookiebotDialogBodyLevelButtonStatistics']")
@@ -33,6 +32,9 @@ public class CookiesPageElements extends WebCommons{
 	public WebElement MarketingCookiesbtn;
 	@FindBy(xpath="//a[@id='CybotCookiebotDialogBodyEdgeMoreDetailsLink']")
 	public WebElement showDetailsLink;
+	@FindBy(xpath="//a[@id='CybotCookiebotDialogNavDetails']")
+	public WebElement cookiePopUpExpandedDetails;
+	
 	@FindBy(xpath="//img[@id='CybotCookiebotDialogPoweredbyImage']")
 	public WebElement creatioLogo;
 	@FindBy(xpath="//a[@id='CybotCookiebotDialogPoweredbyCybot']")
@@ -45,5 +47,6 @@ public class CookiesPageElements extends WebCommons{
 	public WebElement allowAllBtn2;
 	@FindBy(xpath="//button[@id='CybotCookiebotDialogBodyButtonClose']")
 	public WebElement closeBtn;
+	
 		
 }

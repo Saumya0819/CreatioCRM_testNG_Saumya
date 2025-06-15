@@ -121,6 +121,11 @@ public class WebCommons {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
 			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 		}   
+// method to wait using explicit wait - wait for element to be disappeared
+		public void waitForElementDisappeared(WebElement element, int seconds) {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
+			wait.until(ExpectedConditions.invisibilityOf(element));
+		}		
 // method to wait using explicit wait - wait for element
 		public void waitForElement(WebElement element, int seconds) {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
@@ -247,18 +252,20 @@ public class WebCommons {
 			}
 		
 }
-		// method to click on element
+// method to click on element
 		public void click(WebElement element) {
-			scrollToElement(element);
-			element.click();}
-			// method to click on hidden element
-			public void jsClick(WebElement element) {
-				scrollToElement(element);
-				JavascriptExecutor js = (JavascriptExecutor) driver;
-				js.executeScript("arguments[0].click()", element);}
+		scrollToElement(element);
+		element.click();}
+// method to click on hidden element
+		public void jsClick(WebElement element) {
+		scrollToElement(element);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click()", element);}
+// method to enter text in textbox using actions class
+	    public void enterInfo(WebElement textbox, String textValue) {
+		scrollToElement(textbox);
+		new Actions(driver).sendKeys(textbox, textValue).perform();
 			
-				
-
-
+	    }
 
 }

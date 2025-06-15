@@ -47,6 +47,32 @@ public class LoginPageSteps extends LoginPageElements {
 		Assert.assertTrue(isElementDisplayed(signUpLink));
 		log("pass","SignUp Link is displayed as expected");		
 	}
+//Step to click on LinkedIn Icon to login via LinkedIn
+	public void clickOnLinkedInIcon() {
+		waitForElement(linkedInIcon, 5);
+		jsClick(linkedInIcon);
+		log("info","Clicked on the LinkedIn Icon");
+		Assert.assertTrue(isElementDisplayed(linkedInIcon));
+		log("pass","LinkedIn Icon is displayed as expected");
+	}
+//Step to click on Google Icon to login via Google
+	public void clickOnGoogleIcon() {
+		waitForElement(googleIcon, 5);
+		jsClick(googleIcon);
+		log("info","Clicked on the Google Icon");
+		Assert.assertTrue(isElementDisplayed(googleIcon));
+		log("pass","Google Icon is displayed as expected");
+	}
+//Step to click on Facebook Icon to login via Facebook
+	public void clickOnFacebookIcon() {
+		waitForElement(facebookIcon, 5);
+		jsClick(facebookIcon);
+		log("info","Clicked on the Facebook Icon");
+		Assert.assertTrue(isElementDisplayed(facebookIcon));
+		log("pass","Facebook Icon is displayed as expected");
+	}
+		
+		
 	
 
 }

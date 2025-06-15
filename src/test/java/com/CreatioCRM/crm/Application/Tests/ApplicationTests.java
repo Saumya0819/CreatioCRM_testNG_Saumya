@@ -1,10 +1,14 @@
 package com.CreatioCRM.crm.Application.Tests;
 
-public class ApplicationTests {
+import org.testng.annotations.Test;
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+public class ApplicationTests extends BaseTests {
 
+	@Test(priority = 1)
+	public void verifyCookiesPopUpIsDisplayed() {
+		loginPage.launchApplication();
+		cookiesPage.verifyWhetherCookiesPopUpIsDisplayed();
 	}
 
+	
 }

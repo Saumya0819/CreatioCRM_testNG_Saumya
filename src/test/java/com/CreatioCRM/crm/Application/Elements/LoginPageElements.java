@@ -20,9 +20,7 @@ public class LoginPageElements extends WebCommons{
 	protected WebElement loginBtn;
 //	@FindBy(xpath="//span[text()=' SIGN UP ']")
 	public WebElement signUpLink;	
-//Forgot Password Link Elements
-	@FindBy(xpath="//a[@aria-label='Forgot password?']")
-	protected WebElement forgotPasswordLink;	
+	
 //Login using LinkedIn Button Elements
 	@FindBy(xpath="//img[@class='icon-LinkedIn']")
 	protected WebElement linkedInIcon;

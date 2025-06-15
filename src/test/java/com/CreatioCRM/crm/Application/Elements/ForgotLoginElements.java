@@ -1,10 +1,14 @@
 package com.CreatioCRM.crm.Application.Elements;
 
-public class ForgotLoginElements {
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+import com.CreatioCRM.crm.Framework.Web.Commons.WebCommons;
 
-	}
+public class ForgotLoginElements extends WebCommons{
+
+	//Forgot Password Link Elements
+		@FindBy(xpath="//a[@aria-label='Forgot password?']")
+		protected WebElement forgotPasswordLink;
 
 }

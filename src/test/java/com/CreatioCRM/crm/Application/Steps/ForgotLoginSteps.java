@@ -1,10 +1,19 @@
 package com.CreatioCRM.crm.Application.Steps;
 
-public class ForgotLoginSteps {
+import org.testng.Assert;
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+import com.CreatioCRM.crm.Application.Elements.ForgotLoginElements;
+
+public class ForgotLoginSteps extends ForgotLoginElements {
+//	step to click on Forgot Password Link
+	public void clickOnForgotPasswordLink() {
+		waitForElement(forgotPasswordLink, 5);
+		jsClick(forgotPasswordLink);
+		log("info","Clicked on the Forgot Password Link");
+		Assert.assertTrue(isElementDisplayed(forgotPasswordLink));
+		log("pass","Forgot Password Link is displayed as expected");
+	}
+
 
 	}
 
-}
