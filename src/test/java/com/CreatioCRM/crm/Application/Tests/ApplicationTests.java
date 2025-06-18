@@ -9,6 +9,21 @@ public class ApplicationTests extends BaseTests {
 		loginPage.launchApplication();
 		cookiesPage.verifyWhetherCookiesPopUpIsDisplayed();
 	}
+	@Test(priority = 2, dataProvider = "data")
+	public void verifyCookiesPopupContent(String content) {
+		loginPage.launchApplication();
+		cookiesPage.verifyWhetherCookiesPopUpIsDisplayed();
+		cookiesPage.verifyCookiesPopUpContent(content);
+	}
+
+	@Test(priority = 3)
+	public void verifyCookiesPopupLogosAndButtons() {
+		loginPage.launchApplication();
+		cookiesPage.verifyWhetherCookiesPopUpIsDisplayed();
+		cookiesPage.verifyCookiesPopUpLogos();
+		cookiesPage.verifyCookiesPopUpSwitchButtons();
+		cookiesPage.verifyCookiesSelectionButtons();
+	}
 
 	
 }

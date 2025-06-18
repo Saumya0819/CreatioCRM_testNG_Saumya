@@ -22,8 +22,8 @@ public class BaseTests extends BasePage {
 	
 	@BeforeMethod(dependsOnMethods = "setupBrowser")
 	public void initializeAllPages() {
-		WebDriver driver = new BasePage().getDriver(); //get driver after launching the browser window successfully
-		loginPage = new LoginPageSteps(driver); // pass browser details to each class while locating elements
+		WebDriver driver = new BasePage().getDriver(); 
+		loginPage = new LoginPageSteps(driver); 
 		cookiesPage = new CookiesPageSteps(driver);
 		homePage = new HomePageSteps(driver);
 		signUpPage = new SignUpPageSteps(driver);
@@ -34,7 +34,6 @@ public class BaseTests extends BasePage {
 		String [][] data = ExcelUtil.readData("TestData.xlsx", method.getName());
 		return data;
 	}
-	
-	
+		
 }
 	

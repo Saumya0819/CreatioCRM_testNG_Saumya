@@ -2,26 +2,26 @@
 <testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-15T21:30:37 IST" name="Default suite" finished-at="2025-06-15T21:30:37 IST" duration-ms="159">
+  <suite started-at="2025-06-15T21:53:02 IST" name="Default suite" finished-at="2025-06-15T21:53:02 IST" duration-ms="205">
     <groups>
     </groups>
-    <test started-at="2025-06-15T21:30:37 IST" name="Default test" finished-at="2025-06-15T21:30:37 IST" duration-ms="159">
+    <test started-at="2025-06-15T21:53:02 IST" name="Default test" finished-at="2025-06-15T21:53:02 IST" duration-ms="205">
       <class name="com.CreatioCRM.crm.Application.Tests.ApplicationTests">
-        <test-method is-config="true" signature="setupReport()[pri:0, instance:com.CreatioCRM.crm.Application.Tests.ApplicationTests@5c5eefef]" started-at="2025-06-15T21:30:36 IST" name="setupReport" finished-at="2025-06-15T21:30:37 IST" duration-ms="310" status="PASS">
+        <test-method is-config="true" signature="setupReport()[pri:0, instance:com.CreatioCRM.crm.Application.Tests.ApplicationTests@16293aa2]" started-at="2025-06-15T21:53:01 IST" name="setupReport" finished-at="2025-06-15T21:53:02 IST" duration-ms="320" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupReport -->
-        <test-method is-config="true" signature="setupBrowser(java.lang.String)[pri:0, instance:com.CreatioCRM.crm.Application.Tests.ApplicationTests@5c5eefef]" started-at="2025-06-15T21:30:37 IST" name="setupBrowser" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1750003237218" status="FAIL">
+        <test-method is-config="true" signature="setupBrowser(java.lang.String)[pri:0, instance:com.CreatioCRM.crm.Application.Tests.ApplicationTests@16293aa2]" started-at="2025-06-15T21:53:02 IST" name="setupBrowser" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1750004582273" status="FAIL">
           <exception class="org.testng.TestNGException">
             <message>
               <![CDATA[
 Parameter 'BROWSER' is required by BeforeMethod on method setupBrowser but has not been marked @Optional or defined
-in C:\Users\user\AppData\Local\Temp\testng-eclipse--1159064826\testng-customsuite.xml]]>
+in C:\Users\user\AppData\Local\Temp\testng-eclipse-1856715236\testng-customsuite.xml]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.TestNGException: 
 Parameter 'BROWSER' is required by BeforeMethod on method setupBrowser but has not been marked @Optional or defined
-in C:\Users\user\AppData\Local\Temp\testng-eclipse--1159064826\testng-customsuite.xml
+in C:\Users\user\AppData\Local\Temp\testng-eclipse-1856715236\testng-customsuite.xml
 at org.testng.internal.Parameters.createParams(Parameters.java:270)
 at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:358)
 at org.testng.internal.Parameters.createParameters(Parameters.java:700)
@@ -57,21 +57,21 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupBrowser -->
-        <test-method is-config="true" signature="initializeAllPages()[pri:0, instance:com.CreatioCRM.crm.Application.Tests.ApplicationTests@5c5eefef]" started-at="2025-06-15T21:30:37 IST" name="initializeAllPages" finished-at="1970-01-01T05:30:00 IST" depends-on-methods="com.CreatioCRM.crm.Framework.Base.BasePage.setupBrowser" duration-ms="-1750003237244" status="SKIP">
+        <test-method is-config="true" signature="initializeAllPages()[pri:0, instance:com.CreatioCRM.crm.Application.Tests.ApplicationTests@16293aa2]" started-at="2025-06-15T21:53:02 IST" name="initializeAllPages" finished-at="1970-01-01T05:30:00 IST" depends-on-methods="com.CreatioCRM.crm.Framework.Base.BasePage.setupBrowser" duration-ms="-1750004582297" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeAllPages -->
-        <test-method signature="verifyCookiesPopUpIsDisplayed()[pri:1, instance:com.CreatioCRM.crm.Application.Tests.ApplicationTests@5c5eefef]" started-at="2025-06-15T21:30:37 IST" name="verifyCookiesPopUpIsDisplayed" finished-at="2025-06-15T21:30:37 IST" duration-ms="0" status="SKIP">
+        <test-method signature="verifyCookiesPopUpIsDisplayed()[pri:1, instance:com.CreatioCRM.crm.Application.Tests.ApplicationTests@16293aa2]" started-at="2025-06-15T21:53:02 IST" name="verifyCookiesPopUpIsDisplayed" finished-at="2025-06-15T21:53:02 IST" duration-ms="0" status="SKIP">
           <exception class="org.testng.TestNGException">
             <message>
               <![CDATA[
 Parameter 'BROWSER' is required by BeforeMethod on method setupBrowser but has not been marked @Optional or defined
-in C:\Users\user\AppData\Local\Temp\testng-eclipse--1159064826\testng-customsuite.xml]]>
+in C:\Users\user\AppData\Local\Temp\testng-eclipse-1856715236\testng-customsuite.xml]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.TestNGException: 
 Parameter 'BROWSER' is required by BeforeMethod on method setupBrowser but has not been marked @Optional or defined
-in C:\Users\user\AppData\Local\Temp\testng-eclipse--1159064826\testng-customsuite.xml
+in C:\Users\user\AppData\Local\Temp\testng-eclipse-1856715236\testng-customsuite.xml
 at org.testng.internal.Parameters.createParams(Parameters.java:270)
 at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:358)
 at org.testng.internal.Parameters.createParameters(Parameters.java:700)
@@ -107,7 +107,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCookiesPopUpIsDisplayed -->
-        <test-method is-config="true" signature="teardownBrowser()[pri:0, instance:com.CreatioCRM.crm.Application.Tests.ApplicationTests@5c5eefef]" started-at="2025-06-15T21:30:37 IST" name="teardownBrowser" finished-at="2025-06-15T21:30:37 IST" duration-ms="2" status="FAIL">
+        <test-method is-config="true" signature="teardownBrowser()[pri:0, instance:com.CreatioCRM.crm.Application.Tests.ApplicationTests@16293aa2]" started-at="2025-06-15T21:53:02 IST" name="teardownBrowser" finished-at="2025-06-15T21:53:02 IST" duration-ms="1" status="FAIL">
           <exception class="java.lang.NullPointerException">
             <message>
               <![CDATA[Cannot invoke "org.openqa.selenium.WebDriver.quit()" because "com.CreatioCRM.crm.Framework.Base.BasePage.driver" is null]]>
